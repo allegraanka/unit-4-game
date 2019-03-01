@@ -17,8 +17,9 @@ $(".jackpot").text(jackpotValue);
     // on click of crystal, get value and update user score
     function updateScore() {
         $(".crystal").on("click", function () {
-            var c1value = Math.floor((Math.random() * 12) + 5);
+            var c1value = Math.floor((Math.random() * 100) + 23);
             console.log(c1value);
+            $(".user-score").text(c1value);
         })
     }
 
