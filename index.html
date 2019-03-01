@@ -10,15 +10,35 @@
 </head>
 <body>
     <div class="game-container">
-        <div class="jackpot"></div>
         <div class="crystal-container">
             <div class="row">
-                <div class="col"><img src="assets/images/crystal1.png"></div>
-                <div class="col"><img src="assets/images/crystal4.jpeg"></div>
-                <div class="col"><img src="assets/images/crystal3.jpeg"></div>
-                <div class="col"><img src="assets/images/crystal2.jpeg"></div>
+                <div class="col crystal"><img src="assets/images/crystal1.png"></div>
+                <div class="col crystal"><img src="assets/images/crystal4.jpeg"></div>
+                <div class="col crystal"><img src="assets/images/crystal3.jpeg"></div>
+                <div class="col crystal"><img src="assets/images/crystal2.jpeg"></div>
+            </div>
+
+            <!-- random number jackpot -->
+            <div class="container jackpot-container">
+                <div class="row">
+                    <div class="col">
+                        <div class="jackpot text-center"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- user score -->
+            <div class="container user-score-container">
+                <div class="row">
+                    <div class="col">
+                        <div class="user-score text-center"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/script.js"></script>
 </body>
 </html>
