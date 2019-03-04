@@ -1,26 +1,36 @@
 // display a random number on the page
 var jackpotValue = Math.floor((Math.random() * 120) + 19);
+var userScore = 0;
+var resetGame = false;
 $(".jackpot").text(jackpotValue);
 
-// each crystal should generate a random number on click, and add that number to the user score
 
-// if the user score is equal to the jackpot, user wins, and game resets
-// if user wins, show a message that the user won
-// reset game
+// on click of crystal, get value and update user score
+function updateScore() {
+    $(".crystal").on("click", function () {
+        var c1value = Math.floor((Math.random() * 100) + 23);
+        userScore += c1value;
+        console.log(userScore);
+        if (userScore > jackpotValue) {
+            $(".user-score").text("You lose! Because your score: " + userScore + " is greater than " + jackpotValue + ".");
+            resetGame = true;
+            setTimeout(initializeGame, 2500);
+        } else if (jackpotValue > userScore) {
+            $(".user-score").text("You've added " + userScore + " points to your total score! Guess again? But don't go over " + jackpotValue + "!");
+            resetGame = false;
+        } else if (userScore === jackpotValue) {
+            $(".user-score").text("I can't believe it! Against stacked odds, you won with a score of: " + userScore + "!");
+            resetGame = true;
+            setTimeout(initializeGame, 2500);
+        }
+    })
+}
 
-// if the user score is greater than the jackpot, user loses, and game resets
-// if user loses, show a message that the user lost
-// reset game
-
-// on load or reset, game object should generate new random numbers for each crystal and reset the user score
-
-    // on click of crystal, get value and update user score
-    function updateScore() {
-        $(".crystal").on("click", function () {
-            var c1value = Math.floor((Math.random() * 100) + 23);
-            console.log(c1value);
-            $(".user-score").text(c1value);
-        })
+function initializeGame() {
+    if (resetGame === true) {
+        // setInterval for 3 seconds to say 'starting new game in 3... 2... 1...'
+        location.reload();
     }
+}
 
-    updateScore();
+updateScore();
