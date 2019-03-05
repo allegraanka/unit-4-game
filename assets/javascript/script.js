@@ -8,8 +8,14 @@ $(".jackpot").text(jackpotValue);
 // on click of crystal, get value and update user score
 function updateScore() {
     $(".crystal").on("click", function () {
-        var c1value = Math.floor((Math.random() * 100) + 23);
-        userScore += c1value;
+        var c1value = Math.floor((Math.random() * 5) + 1);
+        var c2value = Math.floor((Math.random() * 0) + 7);
+        var c3value = Math.floor((Math.random() * 2) + 2);
+        var c4value = Math.floor((Math.random() * 1) + 3);
+        var randomNumber = [c1value, c2value, c3value, c4value];
+        for (var i = 0; i < randomNumber.length; i++) {
+            userScore += randomNumber[i]
+        }
         console.log(userScore);
         if (userScore > jackpotValue) {
             $(".user-score").text("You lose! Because your score: " + userScore + " is greater than " + jackpotValue + ".");
@@ -21,7 +27,7 @@ function updateScore() {
         } else if (userScore === jackpotValue) {
             $(".user-score").text("I can't believe it! Against stacked odds, you won with a score of: " + userScore + "!");
             resetGame = true;
-            setTimeout(initializeGame, 2500);
+            setTimeout(initializeGame, 3500);
         }
     })
 }

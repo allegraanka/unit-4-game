@@ -1,0 +1,14 @@
+.jackpot-container {
+    padding: 20px;
+    font-size: 2.4rem;
+    border: 1px solid turquoise;
+    box-shadow: 5px 5px 5px aliceblue;
+}
+
+.user-score-container {
+    padding: 20px;
+    font-size: 2.2rem;
+    border: 1px solid aliceblue;
+    box-shadow: 5px 5px 5px turquoise;
+    margin-top: 20px;
+}
