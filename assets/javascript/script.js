@@ -27,7 +27,7 @@ function updateScore() {
         } else if (userScore === jackpotValue) {
             $(".user-score").text("I can't believe it! Against stacked odds, you won with a score of: " + userScore + "!");
             resetGame = true;
-            setTimeout(initializeGame, 3500);
+            setTimeout(initializeGame, 4000);
         }
     })
 }
